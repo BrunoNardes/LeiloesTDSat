@@ -17,12 +17,16 @@ public class conectaDAO {
     
     public Connection connectDB(){
         Connection conn = null;
-        
+
+        String url      = "jdbc:mysql://localhost:3306/uc11?useSSL=false&serverTimezone=UTC";
+        String user     = "root";  
+        String password = "root"; 
+
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/uc11?user=root&password=root");
-        }
-        catch (SQLException erro){
-            JOptionPane.showMessageDialog(null, "Erro ConectaDAO" + erro.getMessage());
+            conn = DriverManager.getConnection(url, user, password);
+        } 
+        catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao conectar ao banco de dados: " + erro.getMessage());
         }
         return conn;
     }

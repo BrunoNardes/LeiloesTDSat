@@ -9,9 +9,9 @@
  */
 public class ProdutosDTO {
     private Integer id;
-    private String nome;
+    private String  nome;
     private Integer valor;
-    private String status;
+    private String  status;
 
     public Integer getId() {
         return id;
@@ -43,6 +43,5 @@ public class ProdutosDTO {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-    
+    }   
 }
