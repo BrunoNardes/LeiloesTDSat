@@ -1,6 +1,8 @@
 
-import java.util.ArrayList;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.util.ArrayList;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -153,6 +155,22 @@ public class listagemVIEW extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
+    public void carregarTabelaProdutos() {
+        ProdutosDAO produtosDAO = new ProdutosDAO();
+        ArrayList<ProdutosDTO> listaProdutos = produtosDAO.listarProdutos();
+
+        DefaultTableModel modeloTabela = new DefaultTableModel();
+        
+        for (ProdutosDTO produto : listaProdutos) {
+            Object[] linha = new Object[4];
+            linha[0] = produto.getId();
+            linha[1] = produto.getNome();
+            linha[2] = produto.getValor();
+            linha[3] = produto.getStatus();
+            modeloTabela.addRow(linha);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
