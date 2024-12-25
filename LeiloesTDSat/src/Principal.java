@@ -13,4 +13,3 @@ public class Principal {
         tela.setVisible(true);
     }
 }
-
